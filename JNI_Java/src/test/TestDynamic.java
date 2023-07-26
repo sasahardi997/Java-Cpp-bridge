@@ -39,6 +39,9 @@ public class TestDynamic extends SubClass{
     
     //Primitive array
     private static native double[] doubleArray();
+
+    //Objects
+    private static native void printPerson(Person person);
     
     public static void main(String[] args) {
         TestDynamic testDynamic = new TestDynamic();
@@ -67,6 +70,11 @@ public class TestDynamic extends SubClass{
         System.out.println("Boolean: " + reverse(false));
         
         System.out.println("Double array: " + Arrays.toString(doubleArray()));
+
+        Person person = new Person("Bob");
+        Person.address = "Nikole Teste 82a";
+        printPerson(person);
+        System.out.println("New name after the setter in cpp: " + person.getName());
         
     }
 

@@ -53,5 +53,44 @@ JNIEXPORT jdoubleArray JNICALL Java_test_TestDynamic_doubleArray
     //(java array, start from index, num of elements, cpp array)
     env->SetDoubleArrayRegion(javaArray, 0, 5, cppArray);
     return javaArray;
-} 
+  }
+
+JNIEXPORT void JNICALL Java_test_TestDynamic_printPerson
+    (JNIEnv * env, jobject clazz, jobject person) {
+
+    //find class
+    jclass personClass = env -> FindClass("test/Person");
+
+    //find fieldID
+    jfieldID fieldID = env -> GetFieldID(personClass, "name", "Ljava/lang/String;");
+
+    //get field
+    jobject nameObject = env -> GetObjectField(person, fieldID);
+
+    //cast type
+    jstring name = (jstring) nameObject;
+
+    //print
+    const char* name_array = env -> GetStringUTFChars(name, 0);
+    printf("%s\n", name_array);
+    
+    //use setter to change the value
+    jstring newName = env -> NewStringUTF("Aleksandar!");
+    env -> SetObjectField(person, fieldID, newName);
+    
+    //Release the native heap(clean the memory)
+    env -> ReleaseStringUTFChars(name, name_array);
+   
+        
+//// Find fieldID for "address" (since it's a static field)
+//    jfieldID addressFieldID = env -> GetStaticFieldID(personClass, "address", "Ljava/lang/String;");
+//
+//    // Get the value of the "address" field (since it's static)
+//    jstring addressObject = (jstring )env -> GetStaticObjectField(personClass, addressFieldID);
+//    const char* address = env->GetStringUTFChars(addressObject, NULL);
+//    printf("Address: %s\n", address);
+//
+//    // Release the native heap (clean the memory)
+//    env->ReleaseStringUTFChars(addressObject, address);
+ }
 

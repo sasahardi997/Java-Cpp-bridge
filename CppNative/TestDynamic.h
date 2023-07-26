@@ -34,7 +34,10 @@ JNIEXPORT jboolean JNICALL Java_test_TestDynamic_reverse__ZZ
   (JNIEnv *, jclass, jboolean, jboolean); 
 
 JNIEXPORT jdoubleArray JNICALL Java_test_TestDynamic_doubleArray
-  (JNIEnv *, jclass);      
+  (JNIEnv *, jclass);
+
+JNIEXPORT void JNICALL Java_test_TestDynamic_printPerson
+    (JNIEnv *, jobject, jobject);
 
 #ifdef __cplusplus
 }
