@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="JNI_Java">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/JNI_Java/dist/JNI_Java.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
