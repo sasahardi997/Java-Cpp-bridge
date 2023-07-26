@@ -39,6 +39,15 @@ JNIEXPORT jdoubleArray JNICALL Java_test_TestDynamic_doubleArray
 JNIEXPORT void JNICALL Java_test_TestDynamic_printPerson
     (JNIEnv *, jobject, jobject);
 
+JNIEXPORT void JNICALL Java_test_TestDynamic_printPersonName
+    (JNIEnv *, jobject, jobject);
+
+JNIEXPORT void JNICALL Java_test_TestDynamic_printPersonInfo
+    (JNIEnv *, jobject, jobject);
+
+JNIEXPORT void JNICALL Java_test_TestDynamic_printPersonInfoStatic
+    (JNIEnv *, jobject, jstring, jint);
+
 #ifdef __cplusplus
 }
 #endif

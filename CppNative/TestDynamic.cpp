@@ -55,7 +55,7 @@ JNIEXPORT jdoubleArray JNICALL Java_test_TestDynamic_doubleArray
     return javaArray;
   }
 
-JNIEXPORT void JNICALL Java_test_TestDynamic_printPerson
+void JNICALL Java_test_TestDynamic_printPerson
     (JNIEnv * env, jobject clazz, jobject person) {
 
     //find class
@@ -82,15 +82,88 @@ JNIEXPORT void JNICALL Java_test_TestDynamic_printPerson
     env -> ReleaseStringUTFChars(name, name_array);
    
         
-//// Find fieldID for "address" (since it's a static field)
-//    jfieldID addressFieldID = env -> GetStaticFieldID(personClass, "address", "Ljava/lang/String;");
-//
-//    // Get the value of the "address" field (since it's static)
-//    jstring addressObject = (jstring )env -> GetStaticObjectField(personClass, addressFieldID);
-//    const char* address = env->GetStringUTFChars(addressObject, NULL);
-//    printf("Address: %s\n", address);
-//
-//    // Release the native heap (clean the memory)
-//    env->ReleaseStringUTFChars(addressObject, address);
+// Find fieldID for "address" (since it's a static field)
+    jfieldID addressFieldID = env -> GetStaticFieldID(personClass, "address", "Ljava/lang/String;");
+
+    // Get the value of the "address" field (since it's static)
+    jstring addressObject = (jstring )env -> GetStaticObjectField(personClass, addressFieldID);
+    const char* address = env->GetStringUTFChars(addressObject, NULL);
+    printf("Address: %s\n", address);
+
+    // Release the native heap (clean the memory)
+    env->ReleaseStringUTFChars(addressObject, address);
  }
+
+void JNICALL Java_test_TestDynamic_printPersonName
+    (JNIEnv * env, jobject clazz, jobject person) {
+    
+    //if we have instance of class (person f.e.)
+    static jclass person_class = env -> GetObjectClass(person);
+   
+//    //If we don't have object, we can use the standard approach to find class
+//    jclass personClass = env -> FindClass("test/Person");
+    
+    //Get method id
+    jmethodID getNameID = env -> GetMethodID(person_class, "getName", "()Ljava/lang/String;");
+    
+    //get return value (Object)
+    jobject obj = env -> CallObjectMethod(person, getNameID);
+    
+    //cast object to string
+    jstring name = (jstring) obj;
+    
+    //print
+    const char* name_array = env -> GetStringUTFChars(name, 0);
+    printf("%s\n", name_array);
+    
+    //Release the native heap(cleanup the memory)
+    env -> ReleaseStringUTFChars(name, name_array);
+}
+
+void JNICALL Java_test_TestDynamic_printPersonInfo
+    (JNIEnv * env, jobject clazz, jobject person) {
+
+        //if we have instance of class (person f.e.)
+    static jclass person_class = env -> GetObjectClass(person);
+    
+    //Get method id
+    //(int parameter) method signature
+    jmethodID getInfoID = env -> GetMethodID(person_class, "getInfo", "(I)Ljava/lang/String;");
+    
+    //get return value (Object)
+    jobject obj = env -> CallObjectMethod(person, getInfoID, 26);
+    
+    //cast object to string
+    jstring name = (jstring) obj;
+    
+    //print
+    const char* name_array = env -> GetStringUTFChars(name, 0);
+    printf("%s\n", name_array);
+    
+    //Release the native heap(cleanup the memory)
+    env -> ReleaseStringUTFChars(name, name_array);
+}
+
+void JNICALL Java_test_TestDynamic_printPersonInfoStatic    
+    (JNIEnv * env, jobject clazz, jstring name, jint age) {
+
+        //if we have instance of class (person f.e.)
+    static jclass person_class = env -> FindClass("test/Person");
+    
+    jmethodID methodID = env -> GetStaticMethodID(person_class, "getInfo", "(Ljava/lang/String;I)Ljava/lang/String;");
+
+    //get return value (Object)
+    //set parameters to method(String as parameter, age set manually)
+    jobject obj = env -> CallStaticObjectMethod(person_class, methodID, name, 39);
+    
+    //cast object to string
+    jstring info = (jstring) obj;
+//    
+//    //print
+    const char* info_array = env -> GetStringUTFChars(info, 0);
+    printf("%s\n", info_array);
+
+    // Release the native heap (clean the memory)
+    env->ReleaseStringUTFChars(info, info_array);
+}
 
