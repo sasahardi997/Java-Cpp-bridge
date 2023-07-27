@@ -48,6 +48,15 @@ JNIEXPORT void JNICALL Java_test_TestDynamic_printPersonInfo
 JNIEXPORT void JNICALL Java_test_TestDynamic_printPersonInfoStatic
     (JNIEnv *, jobject, jstring, jint);
 
+JNIEXPORT jdouble JNICALL Java_test_TestDynamic_callValue
+    (JNIEnv *, jclass, jobject, jdouble);    
+
+JNIEXPORT jdouble JNICALL Java_test_TestDynamic_callValueScaled
+    (JNIEnv *, jclass, jobject, jdouble);   
+
+JNIEXPORT jobject JNICALL Java_test_TestDynamic_callFunctionScaled
+    (JNIEnv *, jclass, jobject, jdouble);   
+
 #ifdef __cplusplus
 }
 #endif

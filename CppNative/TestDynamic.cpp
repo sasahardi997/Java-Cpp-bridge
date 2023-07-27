@@ -147,7 +147,7 @@ void JNICALL Java_test_TestDynamic_printPersonInfo
 void JNICALL Java_test_TestDynamic_printPersonInfoStatic    
     (JNIEnv * env, jobject clazz, jstring name, jint age) {
 
-        //if we have instance of class (person f.e.)
+    //find class
     static jclass person_class = env -> FindClass("test/Person");
     
     jmethodID methodID = env -> GetStaticMethodID(person_class, "getInfo", "(Ljava/lang/String;I)Ljava/lang/String;");
@@ -158,8 +158,8 @@ void JNICALL Java_test_TestDynamic_printPersonInfoStatic
     
     //cast object to string
     jstring info = (jstring) obj;
-//    
-//    //print
+
+    //print
     const char* info_array = env -> GetStringUTFChars(info, 0);
     printf("%s\n", info_array);
 
@@ -167,3 +167,50 @@ void JNICALL Java_test_TestDynamic_printPersonInfoStatic
     env->ReleaseStringUTFChars(info, info_array);
 }
 
+jdouble JNICALL Java_test_TestDynamic_callValue
+    (JNIEnv * env, jclass clazz, jobject func, jdouble x) {
+    
+    //get the jclass of the interface
+    jclass mathFunction_class = env -> FindClass("test/MathFunction");
+    
+    //get the method Id
+    jmethodID methodID = env -> GetMethodID(mathFunction_class, "value", "(D)D");
+    
+    //call it
+    jdouble result = env -> CallDoubleMethod(func, methodID, x);
+    
+    //return
+    return result;
+}   
+
+jdouble JNICALL Java_test_TestDynamic_callValueScaled
+    (JNIEnv * env, jclass clazz, jobject func, jdouble x) {
+    
+    //get the jclass of the interface
+    jclass mathFunction_class = env -> FindClass("test/MathFunction");
+    
+    //get the method Id
+    jmethodID methodID = env -> GetMethodID(mathFunction_class, "valueScaled", "(D)D");
+    
+    //call it
+    jdouble result = env -> CallDoubleMethod(func, methodID, x);
+    
+    //return
+    return result;
+} 
+
+jobject JNICALL Java_test_TestDynamic_callFunctionScaled
+    (JNIEnv * env, jclass clazz, jobject func, jdouble x) {
+    
+    //get the jclass of the interface
+    jclass mathFunction_class = env -> FindClass("test/MathFunction");
+    
+    //get the method Id
+    jmethodID methodID = env -> GetStaticMethodID(mathFunction_class, "functionScaled", "(Ltest/MathFunction;)Ltest/MathFunction;");
+    
+    //call it
+    jobject result = env -> CallStaticObjectMethod(mathFunction_class, methodID, func);
+    
+    //return
+    return result;
+} 
