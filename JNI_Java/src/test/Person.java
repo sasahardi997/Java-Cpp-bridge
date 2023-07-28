@@ -13,7 +13,7 @@ public class Person {
     String name;
 
     private int age;
-
+    
     public static String address;
 
     public Person(String name) {
@@ -31,5 +31,21 @@ public class Person {
 
     public String getName() {
         return this.name;
+    }
+
+    public String getInfo(int age) {
+        return "Name " + this.name + ", age: " + age;
+    }
+    
+    public static String getInfo(String name, int age) {
+        return "Name: " + name + ", age: " + age;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                '}';
     }
 }
