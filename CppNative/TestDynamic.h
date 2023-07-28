@@ -57,6 +57,9 @@ JNIEXPORT jdouble JNICALL Java_test_TestDynamic_callValueScaled
 JNIEXPORT jobject JNICALL Java_test_TestDynamic_callFunctionScaled
     (JNIEnv *, jclass, jobject, jdouble);   
 
+JNIEXPORT jobject JNICALL Java_test_TestDynamic_createPerson
+    (JNIEnv *, jclass, jstring, jint);   
+
 #ifdef __cplusplus
 }
 #endif

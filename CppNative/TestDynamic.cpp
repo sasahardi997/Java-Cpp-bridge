@@ -214,3 +214,19 @@ jobject JNICALL Java_test_TestDynamic_callFunctionScaled
     //return
     return result;
 } 
+
+
+JNIEXPORT jobject JNICALL Java_test_TestDynamic_createPerson
+    (JNIEnv * jvm, jclass clazz, jstring name, jint age) {
+    
+    //Find class of Person
+    jclass personClass = jvm -> FindClass("test/Person");
+    
+    //Call constructor (special method, name of the constructor is always <init>)
+    //L is used to specify that we are passing object (L:path)
+    jmethodID constructorID = jvm -> GetMethodID(personClass, "<init>", "(Ljava/lang/String;I)V");
+    
+    //create new object
+    jobject personObject = jvm -> NewObject(personClass, constructorID, name, age);
+    return personObject;
+}
