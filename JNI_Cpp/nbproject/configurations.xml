@@ -6,6 +6,7 @@
                    projectFiles="true">
       <itemPath>/Users/aleksandarhardi/Desktop/JNI/JNI_Cpp/Test1.h</itemPath>
       <itemPath>/Users/aleksandarhardi/Desktop/JNI/JNI_Cpp/Test2.h</itemPath>
+      <itemPath>TestMaven.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -16,6 +17,7 @@
                    projectFiles="true">
       <itemPath>/Users/aleksandarhardi/Desktop/JNI/JNI_Cpp/Test1.cpp</itemPath>
       <itemPath>/Users/aleksandarhardi/Desktop/JNI/JNI_Cpp/Test2.cpp</itemPath>
+      <itemPath>TestMaven.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
                    displayName="Test Files"
@@ -74,6 +76,10 @@
             tool="3"
             flavor2="0">
       </item>
+      <item path="TestMaven.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TestMaven.h" ex="false" tool="3" flavor2="0">
+      </item>
     </conf>
     <conf name="Release" type="2">
       <toolsSet>
@@ -125,6 +131,10 @@
             ex="false"
             tool="3"
             flavor2="0">
+      </item>
+      <item path="TestMaven.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TestMaven.h" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
   </confs>

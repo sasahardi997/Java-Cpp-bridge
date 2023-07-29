@@ -4,41 +4,49 @@
 #include "TestDynamic.h"
 #include <string>
 
+//*************** MULTIPLY ***************
 jdouble JNICALL Java_test_TestDynamic_multiply
   (JNIEnv * env, jclass object, jdouble param1, jdouble param2) {
     return param1 * param2;
 }
 
+//*************** SUM ***************
 jdouble JNICALL Java_test_TestDynamic_sum__DD
   (JNIEnv * env, jclass object, jdouble param1, jdouble param2) {
     return param1 + param2;
 }
 
+//*************** SUM 3 PARAMETERS ***************
 jdouble JNICALL Java_test_TestDynamic_sum__DDD
   (JNIEnv * env, jclass object, jdouble param1, jdouble param2, jdouble param3) {
     return param1 + param2 + param3;
 }
 
+//*************** DIVIDE ***************
 jdouble JNICALL Java_test_TestDynamic_divide
   (JNIEnv * env, jclass object, jdouble param1, jdouble param2) {
     return param1 / param2;
 }
 
+//*************** REVERSE ***************
 jboolean JNICALL Java_test_TestDynamic_reverse__Z
   (JNIEnv * env, jclass object, jboolean param1) {
     return !param1;
 }      
 
+//*************** EQUALS ***************
 jboolean JNICALL Java_test_TestDynamic_reverse__ZZ
   (JNIEnv * env, jclass object, jboolean param1, jboolean param2) {
     return !(param1 == param2);
 } 
 
+//*************** CREATE STRING IN CPP ***************
 jstring JNICALL Java_test_TestDynamic_speak
   (JNIEnv * env, jclass object) {
     return env -> NewStringUTF("Aleksandree!");
 }   
 
+//*************** DOUBLE[] ***************
 JNIEXPORT jdoubleArray JNICALL Java_test_TestDynamic_doubleArray
   (JNIEnv * env, jclass object) {
     jdouble cppArray[5];
@@ -55,6 +63,7 @@ JNIEXPORT jdoubleArray JNICALL Java_test_TestDynamic_doubleArray
     return javaArray;
   }
 
+//*************** ACCESS INSTANCE AND STATIC FIELD ***************
 void JNICALL Java_test_TestDynamic_printPerson
     (JNIEnv * env, jobject clazz, jobject person) {
 
@@ -94,6 +103,7 @@ void JNICALL Java_test_TestDynamic_printPerson
     env->ReleaseStringUTFChars(addressObject, address);
  }
 
+ //*************** ACCESS INSTANCE METHOD ***************
 void JNICALL Java_test_TestDynamic_printPersonName
     (JNIEnv * env, jobject clazz, jobject person) {
     
@@ -120,6 +130,7 @@ void JNICALL Java_test_TestDynamic_printPersonName
     env -> ReleaseStringUTFChars(name, name_array);
 }
 
+//*************** ACCESS INSTANCE METHOD ***************
 void JNICALL Java_test_TestDynamic_printPersonInfo
     (JNIEnv * env, jobject clazz, jobject person) {
 
@@ -144,6 +155,7 @@ void JNICALL Java_test_TestDynamic_printPersonInfo
     env -> ReleaseStringUTFChars(name, name_array);
 }
 
+//*************** ACCESS STATIC METHOD ***************
 void JNICALL Java_test_TestDynamic_printPersonInfoStatic    
     (JNIEnv * env, jobject clazz, jstring name, jint age) {
 
@@ -167,6 +179,7 @@ void JNICALL Java_test_TestDynamic_printPersonInfoStatic
     env->ReleaseStringUTFChars(info, info_array);
 }
 
+//*************** ACCESS INTERFACE METHOD ***************
 jdouble JNICALL Java_test_TestDynamic_callValue
     (JNIEnv * env, jclass clazz, jobject func, jdouble x) {
     
@@ -183,6 +196,7 @@ jdouble JNICALL Java_test_TestDynamic_callValue
     return result;
 }   
 
+//*************** ACCESS INTERFACE METHOD ***************
 jdouble JNICALL Java_test_TestDynamic_callValueScaled
     (JNIEnv * env, jclass clazz, jobject func, jdouble x) {
     
@@ -199,6 +213,7 @@ jdouble JNICALL Java_test_TestDynamic_callValueScaled
     return result;
 } 
 
+//*************** ACCESS INTERFACE METHOD ***************
 jobject JNICALL Java_test_TestDynamic_callFunctionScaled
     (JNIEnv * env, jclass clazz, jobject func, jdouble x) {
     
@@ -215,7 +230,7 @@ jobject JNICALL Java_test_TestDynamic_callFunctionScaled
     return result;
 } 
 
-
+//*************** ACCESS CONSTRUCTOR AND CREATE OBJECT ***************
 JNIEXPORT jobject JNICALL Java_test_TestDynamic_createPerson
     (JNIEnv * jvm, jclass clazz, jstring name, jint age) {
     

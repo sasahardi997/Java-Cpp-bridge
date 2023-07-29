@@ -36,7 +36,8 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/_ext/9071aebf/Test1.o \
-	${OBJECTDIR}/_ext/9071aebf/Test2.o
+	${OBJECTDIR}/_ext/9071aebf/Test2.o \
+	${OBJECTDIR}/TestMaven.o
 
 
 # C Compiler Flags
@@ -72,6 +73,11 @@ ${OBJECTDIR}/_ext/9071aebf/Test2.o: /Users/aleksandarhardi/Desktop/JNI/JNI_Cpp/T
 	${MKDIR} -p ${OBJECTDIR}/_ext/9071aebf
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -I../../../Library/Java/JavaVirtualMachines/azul-1.8.0_372/Contents/Home/include -I../../../Library/Java/JavaVirtualMachines/azul-1.8.0_372/Contents/Home/include/darwin -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/9071aebf/Test2.o /Users/aleksandarhardi/Desktop/JNI/JNI_Cpp/Test2.cpp
+
+${OBJECTDIR}/TestMaven.o: TestMaven.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -I../../../Library/Java/JavaVirtualMachines/azul-1.8.0_372/Contents/Home/include -I../../../Library/Java/JavaVirtualMachines/azul-1.8.0_372/Contents/Home/include/darwin -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TestMaven.o TestMaven.cpp
 
 # Subprojects
 .build-subprojects:
