@@ -5,7 +5,6 @@ public class TestMaven {
         System.setProperty(
                 "java.library.path",
                 "/Users/aleksandarhardi/Desktop/JNI/JNI_Cpp/dist/Debug/GNU-MacOSX");
-        System.out.println(System.getProperty("java.library.path"));
         System.loadLibrary("JNI_Cpp");
     }
 
