@@ -3,6 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/cFiles/file.h to edit this template
  */
 
+#include <jni.h>
+
 /* 
  * File:   TestMaven.h
  * Author: aleksandarhardi
@@ -17,7 +19,8 @@
 extern "C" {
 #endif
 
-
+JNIEXPORT jdouble JNICALL Java_org_TestMaven_multiply
+  (JNIEnv *, jclass, jdouble, jdouble);
 
 
 #ifdef __cplusplus

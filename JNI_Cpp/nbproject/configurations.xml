@@ -4,8 +4,6 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
-      <itemPath>/Users/aleksandarhardi/Desktop/JNI/JNI_Cpp/Test1.h</itemPath>
-      <itemPath>/Users/aleksandarhardi/Desktop/JNI/JNI_Cpp/Test2.h</itemPath>
       <itemPath>TestMaven.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
@@ -15,8 +13,6 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
-      <itemPath>/Users/aleksandarhardi/Desktop/JNI/JNI_Cpp/Test1.cpp</itemPath>
-      <itemPath>/Users/aleksandarhardi/Desktop/JNI/JNI_Cpp/Test2.cpp</itemPath>
       <itemPath>TestMaven.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -56,26 +52,6 @@
           </incDir>
         </ccTool>
       </compileType>
-      <item path="/Users/aleksandarhardi/Desktop/JNI/JNI_Cpp/Test1.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="/Users/aleksandarhardi/Desktop/JNI/JNI_Cpp/Test1.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="/Users/aleksandarhardi/Desktop/JNI/JNI_Cpp/Test2.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="/Users/aleksandarhardi/Desktop/JNI/JNI_Cpp/Test2.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
       <item path="TestMaven.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="TestMaven.h" ex="false" tool="3" flavor2="0">
@@ -112,26 +88,6 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
-      <item path="/Users/aleksandarhardi/Desktop/JNI/JNI_Cpp/Test1.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="/Users/aleksandarhardi/Desktop/JNI/JNI_Cpp/Test1.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="/Users/aleksandarhardi/Desktop/JNI/JNI_Cpp/Test2.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="/Users/aleksandarhardi/Desktop/JNI/JNI_Cpp/Test2.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
       <item path="TestMaven.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="TestMaven.h" ex="false" tool="3" flavor2="0">

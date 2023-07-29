@@ -35,8 +35,6 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/_ext/9071aebf/Test1.o \
-	${OBJECTDIR}/_ext/9071aebf/Test2.o \
 	${OBJECTDIR}/TestMaven.o
 
 
@@ -63,16 +61,6 @@ LDLIBSOPTIONS=
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libJNI_Cpp.${CND_DLIB_EXT}: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libJNI_Cpp.${CND_DLIB_EXT} ${OBJECTFILES} ${LDLIBSOPTIONS} -dynamiclib -install_name libJNI_Cpp.${CND_DLIB_EXT} -fPIC
-
-${OBJECTDIR}/_ext/9071aebf/Test1.o: /Users/aleksandarhardi/Desktop/JNI/JNI_Cpp/Test1.cpp
-	${MKDIR} -p ${OBJECTDIR}/_ext/9071aebf
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -I../../../Library/Java/JavaVirtualMachines/azul-1.8.0_372/Contents/Home/include -I../../../Library/Java/JavaVirtualMachines/azul-1.8.0_372/Contents/Home/include/darwin -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/9071aebf/Test1.o /Users/aleksandarhardi/Desktop/JNI/JNI_Cpp/Test1.cpp
-
-${OBJECTDIR}/_ext/9071aebf/Test2.o: /Users/aleksandarhardi/Desktop/JNI/JNI_Cpp/Test2.cpp
-	${MKDIR} -p ${OBJECTDIR}/_ext/9071aebf
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -I../../../Library/Java/JavaVirtualMachines/azul-1.8.0_372/Contents/Home/include -I../../../Library/Java/JavaVirtualMachines/azul-1.8.0_372/Contents/Home/include/darwin -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/9071aebf/Test2.o /Users/aleksandarhardi/Desktop/JNI/JNI_Cpp/Test2.cpp
 
 ${OBJECTDIR}/TestMaven.o: TestMaven.cpp
 	${MKDIR} -p ${OBJECTDIR}
