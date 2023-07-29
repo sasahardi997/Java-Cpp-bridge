@@ -52,6 +52,30 @@
           </incDir>
         </ccTool>
       </compileType>
+      <packaging>
+        <packType>Tar</packType>
+        <output>/Users/aleksandarhardi/Desktop/JNI/JNI_Java_Maven/src/main/resources/libJNICpp.dylib.tar</output>
+        <packFileList>
+          <packFileListElem type="File"
+                            to="libJNICpp.dylib/lib/libJNI_Cpp.dylib"
+                            from="/Users/aleksandarhardi/Desktop/JNI/JNI_Java_Maven/src/main/resources/libJNICpp.dylib"
+                            perm="644"
+                            owner="root"
+                            group="bin"/>
+          <packFileListElem type="File"
+                            to="${PACKAGE_TOP_DIR}lib/${OUTPUT_BASENAME}"
+                            from="${OUTPUT_PATH}"
+                            perm="644"
+                            owner="root"
+                            group="bin"/>
+          <packFileListElem type="File"
+                            to="${PACKAGE_TOP_DIR}lib/${OUTPUT_BASENAME}"
+                            from="${OUTPUT_PATH}"
+                            perm="644"
+                            owner="root"
+                            group="bin"/>
+        </packFileList>
+      </packaging>
       <item path="TestMaven.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="TestMaven.h" ex="false" tool="3" flavor2="0">

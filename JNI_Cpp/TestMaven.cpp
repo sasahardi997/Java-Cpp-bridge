@@ -6,7 +6,7 @@
 #include "TestMaven.h"
 #include <string>
 
-JNIEXPORT jdouble JNICALL Java_main_java_org_TestMaven_multiply
+JNIEXPORT jdouble JNICALL Java_org_TestMaven_multiply
   (JNIEnv * jvm, jclass clazz, jdouble param1, jdouble param2) {
     return param1 * param2;
 }

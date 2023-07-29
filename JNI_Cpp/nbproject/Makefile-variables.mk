@@ -11,9 +11,9 @@ CND_PLATFORM_Debug=GNU-MacOSX
 CND_ARTIFACT_DIR_Debug=dist/Debug/GNU-MacOSX
 CND_ARTIFACT_NAME_Debug=libJNI_Cpp.dylib
 CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-MacOSX/libJNI_Cpp.dylib
-CND_PACKAGE_DIR_Debug=dist/Debug/GNU-MacOSX/package
+CND_PACKAGE_DIR_Debug=/Users/aleksandarhardi/Desktop/JNI/JNI_Java_Maven/src/main/resources
 CND_PACKAGE_NAME_Debug=libJNICpp.dylib.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/GNU-MacOSX/package/libJNICpp.dylib.tar
+CND_PACKAGE_PATH_Debug=/Users/aleksandarhardi/Desktop/JNI/JNI_Java_Maven/src/main/resources/libJNICpp.dylib.tar
 # Release configuration
 CND_PLATFORM_Release=GNU-MacOSX
 CND_ARTIFACT_DIR_Release=dist/Release/GNU-MacOSX

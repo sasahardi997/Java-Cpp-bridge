@@ -54,11 +54,19 @@ function copyFileToTmpDir
 
 # Setup
 cd "${TOP}"
-mkdir -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/package
+mkdir -p /Users/aleksandarhardi/Desktop/JNI/JNI_Java_Maven/src/main/resources
 rm -rf ${NBTMPDIR}
 mkdir -p ${NBTMPDIR}
 
 # Copy files and create directories and links
+cd "${TOP}"
+makeDirectory "${NBTMPDIR}/libJNICpp.dylib/lib"
+copyFileToTmpDir "/Users/aleksandarhardi/Desktop/JNI/JNI_Java_Maven/src/main/resources/libJNICpp.dylib" "${NBTMPDIR}/libJNICpp.dylib/lib/libJNI_Cpp.dylib" 0644
+
+cd "${TOP}"
+makeDirectory "${NBTMPDIR}/libJNICpp.dylib/lib"
+copyFileToTmpDir "${OUTPUT_PATH}" "${NBTMPDIR}/${PACKAGE_TOP_DIR}lib/${OUTPUT_BASENAME}" 0644
+
 cd "${TOP}"
 makeDirectory "${NBTMPDIR}/libJNICpp.dylib/lib"
 copyFileToTmpDir "${OUTPUT_PATH}" "${NBTMPDIR}/${PACKAGE_TOP_DIR}lib/${OUTPUT_BASENAME}" 0644
@@ -66,9 +74,9 @@ copyFileToTmpDir "${OUTPUT_PATH}" "${NBTMPDIR}/${PACKAGE_TOP_DIR}lib/${OUTPUT_BA
 
 # Generate tar file
 cd "${TOP}"
-rm -f ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/package/libJNICpp.dylib.tar
+rm -f /Users/aleksandarhardi/Desktop/JNI/JNI_Java_Maven/src/main/resources/libJNICpp.dylib.tar
 cd ${NBTMPDIR}
-tar -vcf ../../../../${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/package/libJNICpp.dylib.tar *
+tar -vcf /Users/aleksandarhardi/Desktop/JNI/JNI_Java_Maven/src/main/resources/libJNICpp.dylib.tar *
 checkReturnCode
 
 # Cleanup
