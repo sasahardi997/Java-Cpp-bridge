@@ -1,3 +1,7 @@
 /JNI_Java_Maven/target/
 /JNI_Cpp/dist/
 /JNI_TestJar/target/
+
+/out
+/.idea
+.DS_Store
