@@ -60,6 +60,9 @@ JNIEXPORT jobject JNICALL Java_test_TestDynamic_callFunctionScaled
 JNIEXPORT jobject JNICALL Java_test_TestDynamic_createPerson
     (JNIEnv *, jclass, jstring, jint);   
 
+JNIEXPORT void JNICALL Java_test_TestDynamic_triggerMethod
+    (JNIEnv *, jclass); 
+
 #ifdef __cplusplus
 }
 #endif

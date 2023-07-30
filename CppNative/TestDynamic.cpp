@@ -255,3 +255,26 @@ extern "C" JNIEXPORT jint JNICALL JNI_OnLoad(JavaVM* vm, void* reserved) {
     
     return JNI_VERSION_1_8;
 }
+
+//*************** USE THE CUSTOM JAR ***************
+JNIEXPORT void JNICALL Java_test_TestDynamic_triggerMethod
+    (JNIEnv * jvm, jclass clazz) {
+    
+    //Get jclass
+    jclass numberClass = jvm -> FindClass("org/example/Number");
+    
+//    //Get methodID
+//    jmethodID findSmalletstNumberMethodID = jvm -> GetStaticMethodID(numberClass, "findSmallestNumber", "(DDD)D");
+//    
+//    //Create double values
+//    jdouble x = static_cast<jdouble>(3.14);
+//    jdouble y = static_cast<jdouble>(5.12);
+//    jdouble z = static_cast<jdouble>(3.11);
+//    
+//    //Call it
+//    jdouble smallestNumResult = jvm -> CallStaticDoubleMethod(numberClass, findSmalletstNumberMethodID, x, y, z);
+//    
+//    //Print
+//    std::cout << "The smallest number is: " << smallestNumResult << std::endl;
+    
+}
