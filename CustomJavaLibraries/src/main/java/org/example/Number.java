@@ -9,8 +9,4 @@ public class Number {
         Arrays.sort(doubleArray);
         return doubleArray[0];
     }
-
-    public static void main(String[] args) {
-
-    }
 }
