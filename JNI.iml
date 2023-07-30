@@ -6,6 +6,7 @@
       <sourceFolder url="file://$MODULE_DIR$/CppNative/dist/Debug/GNU-MacOSX" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JNI_Java/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JNI_Java_Maven/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JNI_TestJar/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/JNI_Java_Maven/src/main/java/org/example" />
     </content>
     <orderEntry type="inheritedJdk" />

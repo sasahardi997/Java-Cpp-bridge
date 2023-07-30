@@ -3,6 +3,7 @@
 
 #include "TestDynamic.h"
 #include <string>
+#include <iostream>
 
 //*************** MULTIPLY ***************
 jdouble JNICALL Java_test_TestDynamic_multiply
@@ -244,4 +245,13 @@ JNIEXPORT jobject JNICALL Java_test_TestDynamic_createPerson
     //create new object
     jobject personObject = jvm -> NewObject(personClass, constructorID, name, age);
     return personObject;
+}
+
+//*************** RUN AUTOMATICALLY (Java Native Access) ***************
+extern "C" JNIEXPORT jint JNICALL JNI_OnLoad(JavaVM* vm, void* reserved) {
+    
+    //It's printed in the first line (first run this method, and then the the rest)
+    std::cout << "Hi from C++ with Java native access" << std::endl ;
+    
+    return JNI_VERSION_1_8;
 }

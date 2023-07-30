@@ -14,6 +14,7 @@ public class TestDynamic extends SubClass{
     public static final String OS = System.getProperty("os.name").toLowerCase();
     
     static {
+        System.setProperty("java.library.path", "/Users/aleksandarhardi/Desktop/JNI/CppNative/dist/Debug/GNU-MacOSX");
         System.loadLibrary("CppNative");
     }
     
