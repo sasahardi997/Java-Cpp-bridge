@@ -257,8 +257,9 @@ extern "C" JNIEXPORT jint JNICALL JNI_OnLoad(JavaVM* vm, void* reserved) {
 }
 
 //*************** USE THE CUSTOM JAR ***************
-//The jar file must be added as modules and must be in RUNTIME to be available
+//The jar file must be added as modules(IntelliJ) and must be in RUNTIME to be available
 //to the code outside of the project(Java_Jni)
+//In apache netbeans it must be added to the classpath
 JNIEXPORT void JNICALL Java_test_TestDynamic_triggerMethod
     (JNIEnv * jvm, jclass clazz) {
     
@@ -278,5 +279,4 @@ JNIEXPORT void JNICALL Java_test_TestDynamic_triggerMethod
     
     //Print
     std::cout << "The smallest number is: " << smallestNumResult << std::endl;
-    
 }

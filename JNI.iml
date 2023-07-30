@@ -11,5 +11,16 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library" exported="" scope="RUNTIME">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/JNI_Java/customJars/CustomJavaLibraries-1.0-SNAPSHOT.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$MODULE_DIR$/JNI_Java/customJars/CustomJavaLibraries-1.0-SNAPSHOT.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
   </component>
 </module>
