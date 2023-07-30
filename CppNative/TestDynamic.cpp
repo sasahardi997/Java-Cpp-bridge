@@ -257,24 +257,26 @@ extern "C" JNIEXPORT jint JNICALL JNI_OnLoad(JavaVM* vm, void* reserved) {
 }
 
 //*************** USE THE CUSTOM JAR ***************
+//The jar file must be added as modules and must be in RUNTIME to be available
+//to the code outside of the project(Java_Jni)
 JNIEXPORT void JNICALL Java_test_TestDynamic_triggerMethod
     (JNIEnv * jvm, jclass clazz) {
     
     //Get jclass
     jclass numberClass = jvm -> FindClass("org/example/Number");
     
-//    //Get methodID
-//    jmethodID findSmalletstNumberMethodID = jvm -> GetStaticMethodID(numberClass, "findSmallestNumber", "(DDD)D");
-//    
-//    //Create double values
-//    jdouble x = static_cast<jdouble>(3.14);
-//    jdouble y = static_cast<jdouble>(5.12);
-//    jdouble z = static_cast<jdouble>(3.11);
-//    
-//    //Call it
-//    jdouble smallestNumResult = jvm -> CallStaticDoubleMethod(numberClass, findSmalletstNumberMethodID, x, y, z);
-//    
-//    //Print
-//    std::cout << "The smallest number is: " << smallestNumResult << std::endl;
+    //Get methodID
+    jmethodID findSmalletstNumberMethodID = jvm -> GetStaticMethodID(numberClass, "findSmallestNumber", "(DDD)D");
+    
+    //Create double values
+    jdouble x = static_cast<jdouble>(3.14);
+    jdouble y = static_cast<jdouble>(5.12);
+    jdouble z = static_cast<jdouble>(3.11);
+    
+    //Call it
+    jdouble smallestNumResult = jvm -> CallStaticDoubleMethod(numberClass, findSmalletstNumberMethodID, x, y, z);
+    
+    //Print
+    std::cout << "The smallest number is: " << smallestNumResult << std::endl;
     
 }

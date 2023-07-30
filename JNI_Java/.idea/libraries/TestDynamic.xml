@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="TestDynamic">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/jars/TestDynamic.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
