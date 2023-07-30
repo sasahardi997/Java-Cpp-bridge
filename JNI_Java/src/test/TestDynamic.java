@@ -1,6 +1,7 @@
 package test;
 
 import java.util.Arrays;
+import org.example.Number;
 
 /**
  *
@@ -59,6 +60,9 @@ public class TestDynamic extends SubClass{
     
     //Constructor
     private static native Person createPerson(String name, int age);
+    
+    //Use custom jars
+    private static native void triggerMethod();
 
     public static void main(String[] args) {
         TestDynamic testDynamic = new TestDynamic();
@@ -123,6 +127,9 @@ public class TestDynamic extends SubClass{
         //Constructor
         Person constructedPerson = createPerson("Muzan", 49);
         System.out.println(constructedPerson);
+        
+        //Use custom jars
+        triggerMethod();
     }
 
     private static boolean isMac() {
